@@ -67,6 +67,9 @@
 
     // 判断是否处于"拦截退出"的状态：当作弊菜单等弹层打开时，ESC 优先用于关闭弹层
     function hasBlockingOverlay() {
+        // 作弊面板（右上角入口打开的居中面板）
+        const cheatPanel = document.getElementById('cheat-panel');
+        if (cheatPanel && !cheatPanel.classList.contains('hidden')) return true;
         // 作弊菜单是 InputHandler 动态插入的 #mobile-cheat-menu，关闭时直接 remove
         if (document.getElementById('mobile-cheat-menu')) return true;
         // 也可扩展其他需要 ESC 优先关闭的弹层

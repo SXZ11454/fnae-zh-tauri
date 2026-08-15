@@ -2105,3 +2105,134 @@ button {
         padding: 6px 14px 3px;
     }
 }
+
+/* ==================== 右上角作弊按钮 ==================== */
+
+#cheat-btn {
+    position: fixed;
+    top: 2vh;
+    right: 2vw;
+    transform: translateX(-130px);
+    padding: 15px 25px;
+    background: transparent;
+    border: none;
+    cursor: default;
+    z-index: 102;
+    transition: all 0.2s;
+    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-size: 18px;
+    font-weight: normal;
+    color: #fff;
+    letter-spacing: 3px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+#cheat-btn:hover {
+    transform: translateX(-130px) scale(1.05);
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 1);
+}
+
+/* ==================== 作弊面板 ==================== */
+
+#cheat-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.98);
+    border: 2px solid #aa0000;
+    border-radius: 0;
+    padding: 25px 30px;
+    z-index: 106;
+    min-width: 420px;
+    max-width: 92vw;
+    max-height: 92vh;
+    overflow-y: auto;
+    box-shadow: 0 0 30px rgba(170, 0, 0, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.6);
+    font-family: 'Consola', 'LXGWNeoXiHei';
+    color: #e0e0e0;
+}
+
+#cheat-panel h2 {
+    color: #fff;
+    font-size: 26px;
+    text-align: center;
+    margin: 0 0 6px 0;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(170, 0, 0, 0.8);
+}
+
+.cheat-panel-hint {
+    color: #888;
+    font-size: 12px;
+    text-align: center;
+    margin: 0 0 18px 0;
+    line-height: 1.5;
+}
+
+.cheat-panel-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cheat-panel-section-title {
+    color: #cc4444;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(170, 0, 0, 0.3);
+}
+
+.cheat-panel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 8px;
+}
+
+.cheat-panel-btn {
+    padding: 10px 14px;
+    background: rgba(40, 40, 40, 0.8);
+    border: 1px solid rgba(170, 0, 0, 0.25);
+    color: #e0e0e0;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: default;
+    transition: all 0.15s ease;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.cheat-panel-btn:hover:not(:disabled),
+.cheat-panel-btn:active:not(:disabled) {
+    background: rgba(170, 0, 0, 0.25);
+    color: #fff;
+    border-color: rgba(170, 0, 0, 0.6);
+}
+
+.cheat-panel-btn:disabled {
+    color: #555;
+    cursor: default;
+    opacity: 0.6;
+}
+
+#cheat-panel-close {
+    display: block;
+    margin: 22px auto 0;
+    padding: 12px 40px;
+    background: rgba(170, 0, 0, 0.2);
+    border: 1px solid rgba(170, 0, 0, 0.5);
+    color: #fff;
+    font-family: inherit;
+    font-size: 18px;
+    letter-spacing: 3px;
+    cursor: default;
+    transition: all 0.15s ease;
+}
+
+#cheat-panel-close:hover,
+#cheat-panel-close:active {
+    background: rgba(170, 0, 0, 0.45);
+}

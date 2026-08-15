@@ -11,6 +11,7 @@ class InputHandler {
         this.cheatMenu = null;
 
         this.bindEvents();
+        this.initCheatPanel();
     }
 
     bindEvents() {
@@ -48,11 +49,85 @@ class InputHandler {
 
         // Escape 关闭菜单
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') this.closeCheatMenu();
+            if (e.key === 'Escape') {
+                this.closeCheatMenu();
+                this.closeCheatPanel();
+            }
         });
     }
 
     // ==================== 作弊逻辑（提取为独立方法） ====================
+
+    // ==================== 作弊面板按钮（右上角入口） ====================
+
+    initCheatPanel() {
+        const btn = document.getElementById('cheat-btn');
+        const panel = document.getElementById('cheat-panel');
+        const closeBtn = document.getElementById('cheat-panel-close');
+        if (!btn || !panel) return;
+
+        // 打开/关闭面板（切换）
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (panel.classList.contains('hidden')) {
+                this.openCheatPanel();
+            } else {
+                this.closeCheatPanel();
+            }
+        });
+
+        // 关闭按钮
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.closeCheatPanel();
+        });
+
+        // 点击面板内部不触发外部关闭逻辑
+        panel.addEventListener('click', (e) => e.stopPropagation());
+
+        // 游戏内作弊按钮
+        const wire = (id, fn) => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('click', (e) => { e.stopPropagation(); fn.call(this); });
+        };
+        wire('cheat-trump-vent', this.cheatTrumpVent);
+        wire('cheat-time-skip', this.cheatTimeSkip);
+        wire('cheat-skip-night', this.cheatSkipNight);
+        wire('cheat-unlock-custom', this.cheatUnlockCustomNight);
+        wire('cheat-unlock-special', this.cheatUnlockSpecialNight);
+
+        // 跳转关卡按钮（1~6）
+        document.querySelectorAll('.cheat-jump-btn').forEach(b => {
+            b.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.cheatJumpToNight(parseInt(b.dataset.night));
+            });
+        });
+    }
+
+    openCheatPanel() {
+        const panel = document.getElementById('cheat-panel');
+        if (!panel) return;
+        const isRunning = this.game.state.isGameRunning;
+        const isMainMenu = this.game.mainMenu && !this.game.mainMenu.classList.contains('hidden');
+
+        // 游戏内作弊按钮：仅游戏中启用
+        ['cheat-trump-vent', 'cheat-time-skip', 'cheat-skip-night'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.disabled = !isRunning;
+        });
+        // 跳转关卡按钮：仅主菜单启用
+        document.querySelectorAll('.cheat-jump-btn').forEach(b => {
+            b.disabled = !isMainMenu;
+        });
+
+        panel.classList.remove('hidden');
+    }
+
+    closeCheatPanel() {
+        const panel = document.getElementById('cheat-panel');
+        if (panel) panel.classList.add('hidden');
+    }
 
     cheatTrumpVent() {
         if (this.game.state.isGameRunning && this.game.enemyAI.trump.hasSpawned) {

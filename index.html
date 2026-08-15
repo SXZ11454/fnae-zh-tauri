@@ -100,7 +100,7 @@
             <button id="continue-game" class="hidden">继续</button>
             <button id="special-night-btn" class="hidden">爱泼斯坦的特别之夜</button>
             <button id="custom-night-btn" class="hidden">自定义夜晚</button>
-            <div class="copyright">© EVAN PRODUCTIONS | HTML5 remake by <a href="https://fivenightsatepsteins.org/fivenightsatepsteins-online" target="_blank" style="color: inherit; text-decoration: underline;">killlala1213</a> | Chinese translation(汉化) by <a href="https://github.com/JerryXu09/FNAE-zh" target="_blank" style="color: inherit; text-decoration: underline;">JerryXu09</a></div>
+            <div class="copyright">© EVAN PRODUCTIONS | HTML5 remake by <a href="https://fivenightsatepsteins.org/fivenightsatepsteins-online" target="_blank" style="color: inherit; text-decoration: underline;">killlala1213</a> | Chinese translation(汉化) by <a href="https://github.com/JerryXu09/FNAE-zh" target="_blank" style="color: inherit; text-decoration: underline;">JerryXu09</a> | Tauri Repack and Touch Improvement by <a href="https://github.com/SXZ11454/fnae-zh-tauri" target="_blank" style="color: inherit; text-decoration: underline;">SXZ11454</a></div>
             <div class="version">v1.2.2</div>
         </div>
         
@@ -109,6 +109,9 @@
 
         <!-- 教程按钮 - 只在主菜单显示，与音量按钮样式一致 -->
         <button id="tutorial-btn" title="教程">教程</button>
+
+        <!-- 作弊按钮 - 右上角，与音量/教程按钮同行上方 -->
+        <button id="cheat-btn" title="作弊菜单">作弊</button>
         
         <!-- 音量设置面板 -->
         <div id="volume-panel" class="hidden">
@@ -234,6 +237,41 @@
                 </p>
                 <button id="tutorial-got-it">明白了</button>
             </div>
+        </div>
+
+        <!-- 作弊面板 -->
+        <div id="cheat-panel" class="hidden">
+            <h2>作弊菜单</h2>
+            <p class="cheat-panel-hint">游戏内作弊仅在游戏中可用，解锁功能任意时机可用，跳转关卡仅在主菜单可用</p>
+            <div class="cheat-panel-body">
+                <div class="cheat-panel-section">
+                    <div class="cheat-panel-section-title">游戏内作弊</div>
+                    <div class="cheat-panel-grid">
+                        <button class="cheat-panel-btn" id="cheat-trump-vent">特朗普进入管道 (F6)</button>
+                        <button class="cheat-panel-btn" id="cheat-time-skip">时间 +1小时 (F7)</button>
+                        <button class="cheat-panel-btn" id="cheat-skip-night">跳过本夜 (F9)</button>
+                    </div>
+                </div>
+                <div class="cheat-panel-section">
+                    <div class="cheat-panel-section-title">解锁功能</div>
+                    <div class="cheat-panel-grid">
+                        <button class="cheat-panel-btn" id="cheat-unlock-custom">解锁自定义夜晚 (F8)</button>
+                        <button class="cheat-panel-btn" id="cheat-unlock-special">解锁特别之夜 (F10)</button>
+                    </div>
+                </div>
+                <div class="cheat-panel-section">
+                    <div class="cheat-panel-section-title">跳转关卡（仅主菜单）</div>
+                    <div class="cheat-panel-grid">
+                        <button class="cheat-panel-btn cheat-jump-btn" data-night="1">第 1 夜</button>
+                        <button class="cheat-panel-btn cheat-jump-btn" data-night="2">第 2 夜</button>
+                        <button class="cheat-panel-btn cheat-jump-btn" data-night="3">第 3 夜</button>
+                        <button class="cheat-panel-btn cheat-jump-btn" data-night="4">第 4 夜</button>
+                        <button class="cheat-panel-btn cheat-jump-btn" data-night="5">第 5 夜</button>
+                        <button class="cheat-panel-btn cheat-jump-btn" data-night="6">特别之夜</button>
+                    </div>
+                </div>
+            </div>
+            <button id="cheat-panel-close">关闭</button>
         </div>
     </div>
 
