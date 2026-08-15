@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "fnae-zh-tauri",
+  "version": "0.1.0",
+  "identifier": "com.zakuzaku.fnae-zh",
+  "build": {
+    "beforeDevCommand": "yarn dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "yarn build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "爱泼斯坦的五夜后宫",
+        "width": 1280,
+        "height": 720,
+        "minWidth": 640,
+        "minHeight": 360,
+        "resizable": false,
+        "maximized": true,
+        "fullscreen": true,
+        "decorations": true,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "../assets/favicon.png",
+      "../assets/favicon.ico",
+      "../assets/favicon.icns"
+    ]
+  }
+}
