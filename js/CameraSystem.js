@@ -604,7 +604,7 @@ class CameraSystem {
             hotspot.style.fontWeight = 'bold';
             hotspot.style.color = '#fff';
             hotspot.style.textShadow = '1px 1px 2px #000';
-            hotspot.style.fontFamily = 'Arial, sans-serif';
+            hotspot.style.fontFamily = 'Consolas, LXGWNeoXiHei';
             hotspot.style.whiteSpace = 'nowrap';
             hotspot.style.borderRadius = '4px';
             hotspot.style.letterSpacing = '0.5px';

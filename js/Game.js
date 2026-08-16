@@ -20,6 +20,8 @@ class Game {
         
         this.initElements();
         this.bindEvents();
+        // 应用保存的逻辑分辨率
+        this.applyResolution();
     }
 
     initElements() {
@@ -51,6 +53,8 @@ class Game {
         this.jumpscareVolumeSlider = document.getElementById('jumpscare-volume');
         this.ventCrawlingVolumeSlider = document.getElementById('vent-crawling-volume');
         this.masterVolumeSlider = document.getElementById('master-volume');
+        // 分辨率设置元素
+        this.resolutionSelect = document.getElementById('resolution-select');
         
         // 调试：检查元素是否找到
         if (!this.volumeBtn) console.error('Volume button not found!');
@@ -79,8 +83,31 @@ class Game {
         this.ventCrawlingVolumeSlider.value = Math.round(volumes.ventCrawling * 100);
         this.masterVolumeSlider.value = Math.round(volumes.master * 100);
         
+        // 分辨率下拉框初始化
+        if (this.resolutionSelect) {
+            this.resolutionSelect.value = this.assets.getResolution();
+        }
+        
         // 更新百分比显示
         this.updateVolumePercents();
+    }
+    
+    // 应用逻辑分辨率：固定为所选 16:9 分辨率并缩放居中
+    applyResolution() {
+        const res = this.assets.getResolution();
+        const [w, h] = res.split('x').map(Number);
+        const container = document.getElementById('game-container');
+        if (!container || !w || !h) return;
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+        const scale = Math.min(vw / w, vh / h);
+        container.style.width = w + 'px';
+        container.style.height = h + 'px';
+        container.style.transform = 'translate(-50%, -50%) scale(' + scale + ')';
+        container.style.transformOrigin = 'center center';
+        container.style.position = 'fixed';
+        container.style.left = '50%';
+        container.style.top = '50%';
     }
     
     updateVolumePercents() {
@@ -168,6 +195,15 @@ class Game {
                 }
             }
         });
+        // 分辨率下拉框事件
+        if (this.resolutionSelect) {
+            this.resolutionSelect.addEventListener('change', (e) => {
+                this.assets.setResolution(e.target.value);
+                this.applyResolution();
+            });
+        }
+        // 窗口尺寸变化时重新计算缩放
+        window.addEventListener('resize', () => this.applyResolution());
         this.mainMenuBtn.addEventListener('click', () => this.showMainMenu());
         this.tutorialGotItBtn.addEventListener('click', () => this.closeTutorial());
         // 教程按钮：显示所有夜晚的教程

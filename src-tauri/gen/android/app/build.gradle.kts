@@ -38,6 +38,8 @@ android {
         }
         getByName("release") {
             isMinifyEnabled = true
+            // release 复用 debug 签名，免去手动 keystore 配置即可安装
+            signingConfig = signingConfigs.getByName("debug")
             proguardFiles(
                 *fileTree(".") { include("**/*.pro") }
                     .plus(getDefaultProguardFile("proguard-android-optimize.txt"))
@@ -50,17 +52,6 @@ android {
     }
     buildFeatures {
         buildConfig = true
-    }
-
-    // 按 ABI 拆分生成独立 APK：32位(armeabi-v7a) 与 64位(arm64-v8a)
-    splits {
-        abi {
-            isEnable = true
-            // 仅包含 32 位与 64 位 ARM
-            include("armeabi-v7a", "arm64-v8a")
-            // 不生成通用 APK（避免重复体积）；如需通用包可设为 false
-            isUniversalApk = false
-        }
     }
 }
 

@@ -7,6 +7,31 @@ class AssetManager {
         
         // 分类音量设置
         this.volumeSettings = this.loadVolumeSettings();
+        // 逻辑分辨率设置（保存在与音量相邻的 localStorage 键中）
+        this.resolution = this.loadResolution();
+    }
+    
+    // 从 localStorage 加载逻辑分辨率
+    loadResolution() {
+        const saved = localStorage.getItem('fnae_resolution');
+        if (saved) return saved;
+        return '1920x1080'; // 默认 1920×1080（16:9）
+    }
+    
+    // 保存逻辑分辨率
+    saveResolution() {
+        localStorage.setItem('fnae_resolution', this.resolution);
+    }
+    
+    // 设置逻辑分辨率
+    setResolution(res) {
+        this.resolution = res;
+        this.saveResolution();
+    }
+    
+    // 获取逻辑分辨率
+    getResolution() {
+        return this.resolution;
     }
     
     // 从 localStorage 加载音量设置

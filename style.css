@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     background: #000;
     overflow: hidden;
     color: #fff;
@@ -83,7 +83,7 @@ button {
     transform: translate(-50%, -50%);
     font-size: 24px;
     color: #fff;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     z-index: 1000;
     animation: pulse 1.5s infinite;
 }
@@ -155,7 +155,7 @@ button {
     height: 100%;
     pointer-events: none;
     z-index: 10;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     font-weight: normal;
 }
 
@@ -174,7 +174,7 @@ button {
     color: #fff;
     font-size: 2vw;
     line-height: 1;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     cursor: default;
     -webkit-tap-highlight-color: transparent;
     transition: background 0.15s, opacity 0.15s;
@@ -224,7 +224,7 @@ button {
     border-radius: 4px;
     color: #fff;
     font-size: 1.6vw;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     letter-spacing: 1px;
     cursor: default;
     -webkit-tap-highlight-color: transparent;
@@ -238,6 +238,7 @@ button {
 
 #touch-toggle-btn:hover {
     background: rgba(0, 0, 0, 0.75);
+    transform: translateX(-50%) scale(1.05);
 }
 
 #touch-toggle-btn.touch-on {
@@ -448,7 +449,7 @@ button {
     font-size: 24px;
     font-weight: normal;
     color: #fff;
-    font-family: Arial, sans-serif;
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     text-shadow: 2px 2px 4px #000;
     z-index: 1;
 }
@@ -505,7 +506,7 @@ button {
     font-size: 48px;
     font-weight: normal;
     color: #f00;
-    font-family: Arial, sans-serif;
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     text-shadow: 2px 2px 4px #000;
     z-index: 3;
     display: none;
@@ -564,7 +565,7 @@ button {
     color: #fff;
     cursor: default;
     transition: all 0.3s;
-    font-family: Arial, sans-serif;
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     font-weight: normal;
     letter-spacing: 4px;
     z-index: 1;
@@ -595,7 +596,7 @@ button {
     color: #fff;
     cursor: default;
     transition: all 0.3s;
-    font-family: Arial, sans-serif;
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     font-weight: normal;
     letter-spacing: 4px;
     z-index: 1;
@@ -745,7 +746,7 @@ button {
     margin-bottom: 5vh;
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
     color: #fff;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     font-weight: normal;
     letter-spacing: 2px;
     line-height: 1.2;
@@ -762,7 +763,7 @@ button {
     cursor: default;
     z-index: 102; /* 在白噪声(101)上面，但低于其他UI(103) */
     transition: all 0.2s;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     font-size: 18px;
     font-weight: normal;
     color: #fff;
@@ -786,7 +787,7 @@ button {
     cursor: default;
     z-index: 102;
     transition: all 0.2s;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     font-size: 18px;
     font-weight: normal;
     color: #fff;
@@ -819,7 +820,7 @@ button {
 
 #volume-panel h3 {
     color: #ff0000;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     font-size: 18px;
     margin-bottom: 15px;
     margin-top: 0;
@@ -834,7 +835,7 @@ button {
 
 .volume-item label {
     color: #ff0000;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     font-size: 12px;
     display: block;
     margin-bottom: 6px;
@@ -879,7 +880,7 @@ button {
 
 .volume-percent {
     color: #777;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     font-size: 13px;
     min-width: 45px;
     text-align: right;
@@ -893,7 +894,7 @@ button {
     color: #888;
     border: 1px solid #555;
     border-radius: 0;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     font-size: 13px;
     font-weight: normal;
     cursor: default;
@@ -905,6 +906,30 @@ button {
     background: #333;
     color: #aaa;
     border-color: #777;
+}
+
+/* 分辨率下拉框 */
+#resolution-select {
+    width: 100%;
+    padding: 6px 8px;
+    background: #1a1a1a;
+    color: #ddd;
+    border: 1px solid #555;
+    border-radius: 0;
+    font-family: 'Consolas', 'LXGWNeoXiHei';
+    font-size: 13px;
+    cursor: default;
+    outline: none;
+    letter-spacing: 1px;
+}
+
+#resolution-select:focus {
+    border-color: #888;
+}
+
+#resolution-select option {
+    background: #1a1a1a;
+    color: #ddd;
 }
 
 #main-menu button {
@@ -919,7 +944,7 @@ button {
     cursor: default;
     transition: all 0.2s;
     text-align: left;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     font-weight: normal;
     letter-spacing: 3px;
     white-space: nowrap;
@@ -954,7 +979,7 @@ button {
     left: 2vw;
     font-size: 1.2vw;
     color: #888;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     z-index: 102;
 }
 
@@ -965,7 +990,7 @@ button {
     transform: translateX(-50%);
     font-size: 0.8vw;
     color: #888;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     z-index: 102;
 }
 
@@ -975,7 +1000,7 @@ button {
     right: 8vw;
     font-size: 1.8vw;
     color: #ccc;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     z-index: 102;
     font-weight: normal;
 }
@@ -1071,32 +1096,33 @@ button {
 
 #tutorial-content {
     background: rgba(30, 30, 30, 0.95);
-    border: 3px solid #666;
-    padding: 4vh 5vw;
-    max-width: 60vw;
-    max-height: 85vh;
+    border: 2px solid #666;
+    padding: 1.5vh 2vw;
+    max-width: 50vw;
+    max-height: 80vh;
     overflow-y: auto;
     text-align: center;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    font-family: 'Consolas', 'LXGWNeoXiHei';
 }
 
 #tutorial-content h2 {
-    font-size: 3vw;
-    margin-bottom: 3vh;
+    font-size: 15px;
+    margin-bottom: 1vh;
     color: #fff;
     text-shadow: 2px 2px 4px #000;
     letter-spacing: 0.1em;
 }
 
 #tutorial-content h3 {
-    font-size: 2vw;
-    margin-top: 3vh;
-    margin-bottom: 1.5vh;
+    font-size: 13px;
+    margin-top: 1.5vh;
+    margin-bottom: 0.5vh;
     color: #ff4444;
     text-shadow: 2px 2px 4px #000;
     letter-spacing: 0.08em;
     border-bottom: 1px solid #555;
-    padding-bottom: 1vh;
+    padding-bottom: 0.3vh;
 }
 
 #tutorial-content h3:first-of-type {
@@ -1104,33 +1130,33 @@ button {
 }
 
 #tutorial-content p {
-    font-size: 1.4vw;
-    line-height: 1.8;
+    font-size: 12px;
+    line-height: 1.4;
     color: #ddd;
-    margin-bottom: 3vh;
+    margin-bottom: 1.5vh;
     text-align: left;
 }
 
 .tutorial-hint {
     text-align: center !important;
     color: #888 !important;
-    font-size: 1.1vw !important;
+    font-size: 11px !important;
     font-style: italic;
-    margin-bottom: 3vh !important;
+    margin-bottom: 1.5vh !important;
 }
 
 #tutorial-got-it {
-    width: 15vw;
-    min-width: 150px;
-    padding: 1.5vh 3vw;
-    font-size: 1.8vw;
-    background: #555;
-    border: 2px solid #888;
+    width: auto;
+    min-width: 100px;
+    padding: 6px 20px;
+    font-size: 13px;
+    background: #333;
+    border: 1px solid #888;
     color: #fff;
     cursor: default;
-    transition: all 0.3s;
+    transition: all 0.2s;
     font-weight: normal;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.15em;
 }
 
 #tutorial-got-it:hover {
@@ -1210,7 +1236,7 @@ button {
     transform: translateX(-50%);
     color: #fff;
     font-size: 1.5vw;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     animation: pulse 1.5s infinite;
 }
 
@@ -1241,7 +1267,7 @@ button {
 #night-intro-text {
     font-size: 8vw;
     color: #fff;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     font-weight: normal;
     letter-spacing: 0.5vw;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
@@ -1488,21 +1514,26 @@ button {
     /* Tutorial */
     #tutorial-content {
         max-width: 85vw;
-        padding: 3vh 4vw;
+        padding: 1.5vh 3vw;
     }
     
     #tutorial-content h2 {
-        font-size: 5vw;
+        font-size: 14px;
     }
     
     #tutorial-content p {
-        font-size: 3.5vw;
+        font-size: 12px;
+    }
+
+    #tutorial-content h3 {
+        font-size: 13px;
     }
     
     #tutorial-got-it {
-        font-size: 4vw;
-        width: 40vw;
-        padding: 2vh 4vw;
+        font-size: 13px;
+        width: auto;
+        min-width: 100px;
+        padding: 6px 20px;
     }
     
     /* Night intro */
@@ -2016,7 +2047,7 @@ button {
     border: 1px solid rgba(255, 0, 0, 0.3);
     border-radius: 4px;
     padding: 8px 0;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 1px rgba(255, 0, 0, 0.2);
     width: 260px;
     max-width: 70vw;
@@ -2119,7 +2150,7 @@ button {
     cursor: default;
     z-index: 102;
     transition: all 0.2s;
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     font-size: 18px;
     font-weight: normal;
     color: #fff;
@@ -2149,7 +2180,7 @@ button {
     max-height: 92vh;
     overflow-y: auto;
     box-shadow: 0 0 30px rgba(170, 0, 0, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.6);
-    font-family: 'Consola', 'LXGWNeoXiHei';
+    font-family: 'Consolas', 'LXGWNeoXiHei';
     color: #e0e0e0;
 }
 

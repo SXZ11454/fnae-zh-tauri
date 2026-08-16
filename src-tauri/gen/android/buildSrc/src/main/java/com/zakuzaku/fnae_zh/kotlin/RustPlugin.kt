@@ -17,14 +17,14 @@ open class RustPlugin : Plugin<Project> {
     override fun apply(project: Project) = with(project) {
         config = extensions.create("rust", Config::class.java)
 
-        // 仅打包 Android 32位(armeabi-v7a) 与 64位(arm64-v8a)
-        val defaultAbiList = listOf("arm64-v8a", "armeabi-v7a");
+        // 回归 Tauri 默认全架构列表；单架构编译通过 --target 参数控制
+        val defaultAbiList = listOf("arm64-v8a", "armeabi-v7a", "x86", "x86_64");
         val abiList = (findProperty("abiList") as? String)?.split(',') ?: defaultAbiList
 
-        val defaultArchList = listOf("arm64", "arm");
+        val defaultArchList = listOf("arm64", "arm", "x86", "x86_64");
         val archList = (findProperty("archList") as? String)?.split(',') ?: defaultArchList
 
-        val targetsList = (findProperty("targetList") as? String)?.split(',') ?: listOf("aarch64", "armv7")
+        val targetsList = (findProperty("targetList") as? String)?.split(',') ?: listOf("aarch64", "armv7", "i686", "x86_64")
 
         extensions.configure<ApplicationExtension> {
             @Suppress("UnstableApiUsage")

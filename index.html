@@ -100,12 +100,12 @@
             <button id="continue-game" class="hidden">继续</button>
             <button id="special-night-btn" class="hidden">爱泼斯坦的特别之夜</button>
             <button id="custom-night-btn" class="hidden">自定义夜晚</button>
-            <div class="copyright">© EVAN PRODUCTIONS | HTML5 remake by <a href="https://fivenightsatepsteins.org/fivenightsatepsteins-online" target="_blank" style="color: inherit; text-decoration: underline;">killlala1213</a> | Chinese translation(汉化) by <a href="https://github.com/JerryXu09/FNAE-zh" target="_blank" style="color: inherit; text-decoration: underline;">JerryXu09</a> | Tauri Repack and Touch Improvement by <a href="https://github.com/SXZ11454/fnae-zh-tauri" target="_blank" style="color: inherit; text-decoration: underline;">SXZ11454</a></div>
+            <div class="copyright">© EVAN PRODUCTIONS<br>HTML5 remake by <a href="https://fivenightsatepsteins.org/fivenightsatepsteins-online" target="_blank" style="color: inherit; text-decoration: underline;">killlala1213</a><br>Chinese translation(汉化) by <a href="https://github.com/JerryXu09/FNAE-zh" target="_blank" style="color: inherit; text-decoration: underline;">JerryXu09</a><br>Tauri Repack and Touch Improvement by <a href="https://github.com/SXZ11454/fnae-zh-tauri" target="_blank" style="color: inherit; text-decoration: underline;">SXZ11454</a></div>
             <div class="version">v1.2.2</div>
         </div>
         
-        <!-- 音量控制按钮 - 独立于主菜单 -->
-        <button id="volume-btn" title="音量设置">音量设置</button>
+        <!-- 设置按钮 - 独立于主菜单（含音量+分辨率） -->
+        <button id="volume-btn" title="设置">设置</button>
 
         <!-- 教程按钮 - 只在主菜单显示，与音量按钮样式一致 -->
         <button id="tutorial-btn" title="教程">教程</button>
@@ -113,9 +113,23 @@
         <!-- 作弊按钮 - 右上角，与音量/教程按钮同行上方 -->
         <button id="cheat-btn" title="作弊菜单">作弊</button>
         
-        <!-- 音量设置面板 -->
+        <!-- 设置面板（含音量+分辨率） -->
         <div id="volume-panel" class="hidden">
-            <h3>音量设置</h3>
+            <h3>设置</h3>
+            
+            <div class="volume-item">
+                <label>逻辑分辨率</label>
+                <div class="volume-slider-container" style="justify-content: center;">
+                    <select id="resolution-select">
+                        <option value="854x480">854 × 480</option>
+                        <option value="1280x720">1280 × 720</option>
+                        <option value="1600x900">1600 × 900</option>
+                        <option value="1920x1080">1920 × 1080</option>
+                        <option value="2560x1440">2560 × 1440</option>
+                        <option value="3840x2160">3840 × 2160</option>
+                    </select>
+                </div>
+            </div>
             
             <div class="volume-item">
                 <label>主音量</label>
