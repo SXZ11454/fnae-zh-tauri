@@ -21,7 +21,7 @@
 
 ## 1. 游戏简介
 
-**网页体验地址: https://fnae.jerry.bio/**
+**不用下载，点击即玩: https://fnae-zh-tauri.pages.dev/**
 
 本作是 *Five Nights at Freddy's*（玩具熊的五夜后宫）的恶搞同人游戏，原版为 Unity 制作，此为 HTML5 网页移植汉化版，本仓库将其通过 Tauri 封装为可独立运行的跨平台应用。
 
